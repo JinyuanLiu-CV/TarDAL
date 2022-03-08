@@ -1,0 +1,7 @@
+kornia~=0.6.3
+numpy~=1.20
+opencv_contrib_python~=4.5.5.62
+torch~=1.9
+torchvision~=0.10
+tqdm~=4.62.3
+wandb~=0.12.11

@@ -10,14 +10,14 @@ utils/*
 !utils/environment_probe.py
 
 # macOS finder file (contain sensitive: local username)
-*/.DS_Store/*
+**/.DS_Store
 
 # python cache
 **/__pycache__
 
 # experimental data
 data/*
-!data/sample/s1
+!data/sample/s1/*
 
 # wandb
 wandb/*

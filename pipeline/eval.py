@@ -1,6 +1,8 @@
+from pathlib import Path
+from typing import List
+
 import torch
 import torch.backends.cudnn
-from pathlib import Path
 from tqdm import tqdm
 
 from utils.image_pair import ImagePair
@@ -18,7 +20,7 @@ class Eval:
         self.net = net
 
     @torch.no_grad()
-    def __call__(self, ir_paths: list[Path], vi_paths: list[Path], dst: Path, color: bool = False):
+    def __call__(self, ir_paths: List[Path], vi_paths: List[Path], dst: Path, color: bool = False):
         p_bar = tqdm(enumerate(zip(ir_paths, vi_paths)), total=len(ir_paths))
         for idx, (ir_path, vi_path) in p_bar:
             assert ir_path.stem == vi_path.stem

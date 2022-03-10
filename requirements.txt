@@ -5,3 +5,4 @@ torch~=1.9
 torchvision~=0.10
 tqdm~=4.62.3
 wandb~=0.12.11
+ipython~=7.31.0

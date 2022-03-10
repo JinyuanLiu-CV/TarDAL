@@ -24,7 +24,7 @@ class Eval:
         p_bar = tqdm(enumerate(zip(ir_paths, vi_paths)), total=len(ir_paths))
         for idx, (ir_path, vi_path) in p_bar:
             assert ir_path.stem == vi_path.stem
-            p_bar.set_description(f'fusing {ir_path.stem}')
+            p_bar.set_description(f'fusing {ir_path.stem} | device: {str(self.device)}')
             pair = ImagePair(ir_path, vi_path)
             ir, vi = pair.ir_t, pair.vi_t
             ir, vi = [ir.half(), vi.half()] if self.half else [ir, vi]

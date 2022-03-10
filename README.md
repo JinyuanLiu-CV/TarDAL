@@ -1,5 +1,7 @@
 # TarDAL
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JinyuanLiu-CV/TarDAL/blob/main/tutorial.ipynb)
+
 Target-aware Dual Adversarial Learning and a Multi-scenario Multi-Modality Benchmark to Fuse Infrared and Visible for
 Object Detection.
 
@@ -10,6 +12,9 @@ The paper and dataset will available soon.
 ![Abstract](assets/abstract.png)
 
 ## Quick Start Examples
+
+You can try our method online (free)
+in [Colab](https://colab.research.google.com/github/JinyuanLiu-CV/TarDAL/blob/main/tutorial.ipynb).
 
 ### Install
 

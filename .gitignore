@@ -8,6 +8,7 @@ runs/*
 utils/*
 !utils/fusion_data.py
 !utils/environment_probe.py
+!utils/image_pair.py
 
 # macOS finder file (contain sensitive: local username)
 **/.DS_Store

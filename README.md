@@ -9,7 +9,7 @@ Work have been accepted by [CVPR 2022](https://cvpr2022.thecvf.com/).
 
 The paper and dataset will available soon.
 
-![Abstract](assets/abstract.png)
+![Abstract](assets/abstract.jpg)
 
 ## Quick Start Examples
 

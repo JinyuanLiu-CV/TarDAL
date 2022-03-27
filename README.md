@@ -13,8 +13,8 @@ The paper and dataset will available soon.
 
 ## Dataset Preview
 
-![Daytime and Overcast](assets/dataset_1.jpg)
-![Night and Challenge](assets/dataset_2.jpg)
+![Daytime and Overcast](assets/preview_1.jpg)
+![Night and Challenge](assets/preview_2.jpg)
 
 ## Fuse Quick Start Examples
 

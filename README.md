@@ -9,9 +9,14 @@ Work have been accepted by [CVPR 2022](https://cvpr2022.thecvf.com/).
 
 The paper and dataset will available soon.
 
-![Abstract](assets/Firstfigure.jpg)
+![Abstract](assets/first_figure.jpg)
 
-## Quick Start Examples
+## Dataset Preview
+
+![Daytime and Overcast](assets/dataset_1.jpg)
+![Night and Challenge](assets/dataset_2.jpg)
+
+## Fuse Quick Start Examples
 
 You can try our method online (free)
 in [Colab](https://colab.research.google.com/github/JinyuanLiu-CV/TarDAL/blob/main/tutorial.ipynb).

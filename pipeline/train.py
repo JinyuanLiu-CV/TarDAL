@@ -1,12 +1,12 @@
 import logging
 from functools import reduce
+from pathlib import Path
 
 import torch
 import wandb
 from kornia.filters import SpatialGradient
 from kornia.losses import SSIMLoss
 from kornia.metrics import AverageMeter
-from pathlib import Path
 from torch import nn, Tensor
 from torch.optim import RMSprop
 from torch.utils.data import DataLoader
@@ -128,10 +128,10 @@ class Train:
 
         return loss.item()
 
-    def gradient(self, x: Tensor) -> Tensor:
+    def gradient(self, x: Tensor, eps: float = 1e-6) -> Tensor:
         s = self.spatial(x)
         dx, dy = s[:, :, 0, :, :], s[:, :, 1, :, :]
-        u = torch.sqrt(torch.pow(dx, 2) + torch.pow(dy, 2))
+        u = torch.sqrt(torch.pow(dx, 2) + torch.pow(dy, 2) + eps)
         return u
 
     def train_generator(self, ir: Tensor, vi: Tensor, mk: Tensor, s1: Tensor, s2: Tensor) -> dict:

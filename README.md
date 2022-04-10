@@ -36,11 +36,11 @@ The preview of our dataset is as follows.
 
 - **Total number of images**: 
    - **8400** (for fusion, detection and fused-based detection)
-   - **600** (independant scene for fusion)
+   - **600** (independent scene for fusion)
 
 - **Total number of image pairs**:
    - **4200** (for fusion, detection and fused-based detection)
-   - **300** (independant scene for fusion)
+   - **300** (independent scene for fusion)
 
 
 - **Format of images**: 

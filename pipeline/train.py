@@ -153,11 +153,10 @@ class Train:
         l_src = w1 * l_ir + w2 * l_vi  # fus <- ssim + l1 -> (ir, vi)
         l_src = l_src.mean()
 
-        with torch.no_grad():
-            self.dis_target.eval()
-            l_target = -self.dis_target(fus * mk).mean()  # judge target: fus * m
-            self.dis_detail.eval()
-            l_detail = -self.dis_detail(self.gradient(fus * (1 - mk))).mean()  # judge detail: Grad(fus * (1-mk))
+        self.dis_target.eval()
+        l_target = -self.dis_target(fus * mk).mean()  # judge target: fus * m
+        self.dis_detail.eval()
+        l_detail = -self.dis_detail(self.gradient(fus * (1 - mk))).mean()  # judge detail: Grad(fus * (1-mk))
 
         c1, c2 = self.config.adv_weight  # c1 * l_target + c2 * l_detail
         l_adv = c1 * l_target + c2 * l_detail

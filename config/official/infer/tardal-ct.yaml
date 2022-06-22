@@ -1,0 +1,109 @@
+# base settings
+device   : cuda # device used for training and evaluation (cpu, cuda, cuda0, cuda1, ...)
+save_dir : 'cache' # folder used for saving the model, logs results
+
+# debug mode settings
+debug    :
+  log       : INFO # log level
+  wandb_mode: 'online' # wandb connection mode
+  fast_run  : false # use a small subset of the dataset for debugging code
+
+# framework training strategy:
+#   backward method: fuse (direct training DT)
+#   backward method: detect (task-oriented training TT)
+#   backward method: fuse & detect (cooperative training CT)
+strategy : fuse
+
+# fuse network settings: core of infrared and visible fusion
+fuse     :
+  dim       : 32 # features base dimensions for generator and discriminator
+  depth     : 3 # depth of dense architecture
+  pretrained: https://github.com/JinyuanLiu-CV/TarDAL/releases/download/v1.0.0/tardal-ct.pth # ~: disable, path or url: load with pretrained parameters
+
+# detect network settings: available if framework in joint mode (detect, fuse + detect)
+detect   :
+  model     : yolov5s # yolo model (yolov5 n,s,m,l,x)
+  channels  : 3 # input channels (3: rgb or 1: grayscale)
+  pretrained: https://github.com/JinyuanLiu-CV/TarDAL/releases/download/v1.0.0/tardal-ct.pth # ~: disable, path or url: load with pretrained parameters
+
+# saliency network settings: generating mask for training tardal
+saliency :
+  url: https://github.com/JinyuanLiu-CV/TarDAL/releases/download/v1.0.0/mask-u2.pth
+
+# iqa settings: information measurement
+iqa      :
+  url: https://github.com/JinyuanLiu-CV/TarDAL/releases/download/v1.0.0/iqa-vgg.pth
+
+# dataset settings:
+#   we provide four built-in representative datasets,
+#   if you want to use some custom datasets, please refer to the documentation to write yourself or open an issue.
+dataset  :
+  name  : M3FD # dataset folder to be trained with (fuse: TNO, RoadScene; fuse & detect: M3FD, MultiSpectral, etc.)
+  root  : data/m3fd # dataset root path
+  # only available for fuse & detect
+  detect:
+    hsv        : [ 0.015,0.7,0.4 ] # image HSV augmentation (fraction) [developing]
+    degrees    : 0 # image rotation (+/- degrees) [developing]
+    translate  : 0.1 # image translation (+/- fraction) [developing]
+    scale      : 0.9  # image scale (+/- gain) [developing]
+    shear      : 0.0  # image shear (+/- degrees) [developing]
+    perspective: 0.0  # image perspective (+/- fraction), range 0-0.001 [developing]
+    flip_ud    : 0.0  # image flip up-down (probability)
+    flip_lr    : 0.5  # image flip left-right (probability)
+
+# train settings:
+train    :
+  image_size   : [ 224, 224 ] # training image size in (h, w)
+  batch_size   : 32 # batch size used to train
+  num_workers  : 8 # number of workers used in data loading
+  epochs       : 1000 # number of epochs to train
+  eval_interval: 1 # evaluation interval during training
+  save_interval: 5 # save interval during training
+
+# inference settings:
+inference:
+  batch_size : 8 # batch size used to train
+  num_workers: 8 # number of workers used in data loading
+  use_eval   : ~ # use eval mode in inference mode, default true, false for v0 weights.
+  grayscale  : false # ignore dataset settings, save as grayscale image
+  save_txt   : false # save label file
+
+# loss settings:
+loss     :
+  # fuse loss: src(l1+ssim/ms-ssim) + adv(target+detail) + det
+  fuse  :
+    src_fn: v1 # v0: 1*ssim + 20*l1 | v1: ms-ssim
+    src   : 0.8  # src loss gain (1 during v0)
+    adv   : 0.2 # adv loss gain (0.1 during v0)
+    t_adv : 0 # target loss gain
+    d_adv : 0 # detail loss gain
+    d_mask: false # use mask for detail discriminator (v0: true)
+    d_warm: 10 # discriminator warmup epochs
+  # detect loss: box + cls + obj
+  detect:
+    box     : 0.05 # box loss gain
+    cls     : 0.5 # cls loss gain
+    cls_pw  : 1.0 # cls BCELoss positive weight
+    obj     : 1.0 # obj loss gain (scale with pixels)
+    obj_pw  : 1.0 # obj BCELoss positive weight
+    iou_t   : 0.20 # IoU training threshold
+    anchor_t: 4.0 # anchor-multiple threshold
+    fl_gamma: 0.0 # focal loss gamma (efficientDet default gamma=1.5)
+  # bridge
+  bridge:
+    fuse  : 0.5 # fuse loss gain for generator
+    detect: 0.5 # detect loss gain for generator
+
+# optimizer settings:
+optimizer:
+  name        : adamw # optimizer name
+  lr_i        : 1.0e-3 # initial learning rate
+  lr_f        : 1.0e-3 # final learning rate
+  momentum    : 0.937 # adam beta1
+  weight_decay: 5.0e-4 # decay rate used in optimizer
+
+# scheduler settings:
+scheduler:
+  warmup_epochs  : 3.0 # warmup epochs
+  warmup_momentum: 0.8 # warmup initial momentum
+  warmup_bias_lr : 0.1 # warmup initial bias lr

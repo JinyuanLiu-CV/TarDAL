@@ -137,10 +137,11 @@ If you have any question about the code, please email to [Zhanbo Huang](mailto:z
 
 ## Citation
 ```
-@inproceedings{TarDAL,
+@inproceedings{liu2022target,
   title={Target-aware Dual Adversarial Learning and a Multi-scenario Multi-Modality Benchmark to Fuse Infrared and Visible for Object Detection},
-  author={Jinyuan Liu, Xin Fan*, Zhangbo Huang, Guanyao Wu, Risheng Liu , Wei Zhong, Zhongxuan Luo},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  author={Liu, Jinyuan and Fan, Xin and Huang, Zhanbo and Wu, Guanyao and Liu, Risheng and Zhong, Wei and Luo, Zhongxuan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={5802--5811},
   year={2022}
 }
 ```

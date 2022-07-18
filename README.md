@@ -7,6 +7,7 @@ Jinyuan Liu, Xin Fan*, Zhangbo Huang, Guanyao Wu, Risheng Liu , Wei Zhong, Zhong
 
 
 - [*[ArXiv]*](https://arxiv.org/abs/2203.16220v1)
+- [*[CVPR]*](https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Target-Aware_Dual_Adversarial_Learning_and_a_Multi-Scenario_Multi-Modality_Benchmark_To_CVPR_2022_paper.pdf)
 ---
 
 ![Abstract](assets/first_figure.jpg)

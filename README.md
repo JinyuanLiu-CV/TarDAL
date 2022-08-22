@@ -43,11 +43,6 @@ The preview of our dataset is as follows.
    - **4200** (for fusion, detection and fused-based detection)
    - **300** (independent scene for fusion)
 
-
-- **Format of images**: 
-   - [Infrared] 24-bit grayscale bitmap
-   - [Visible]  24-bit color bitmap
-
 - **Image size**: **1024 x 768** pixels (mostly)
 
 - **Registration**: **All image pairs are registered.** The visible images are calibrated by using the internal parameters of our synchronized system, and the infrared images are artificially distorted by homography matrix.

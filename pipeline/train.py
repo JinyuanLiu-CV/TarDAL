@@ -108,9 +108,9 @@ class Train:
         self.dis_detail.train()
 
         # sample real & fake
-        real_s = self.gradient(self.gradient(vi) * mk)
+        real_s = self.gradient(vi * (1 - mk))
         self.generator.eval()
-        fake_s = self.gradient(self.generator(ir, vi) * (1 - mk))
+        fake_s = self.gradient(self.generator(ir, vi).detach() * (1 - mk))
 
         # judge value towards real & fake
         real_v = torch.squeeze(self.dis_detail(real_s))

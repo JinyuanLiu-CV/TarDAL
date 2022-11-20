@@ -52,7 +52,7 @@ The preview of our dataset is as follows.
 ### Download
    - [Google Drive](https://drive.google.com/drive/folders/1H-oO7bgRuVFYDcMGvxstT1nmy0WF_Y_6?usp=sharing)
    - [Baidu Yun](https://pan.baidu.com/s/1GoJrrl_mn2HNQVDSUdPCrw?pwd=M3FD)
-### File structure
+### File structure (Still waiting to be updated)
 ```
   M3FD
   ├── Challenge

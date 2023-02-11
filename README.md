@@ -1,4 +1,4 @@
-# TarDAL
+# TarDAL 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JinyuanLiu-CV/TarDAL/blob/main/tutorial.ipynb)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=JinyuanLiu-CV.TarDAL)
@@ -8,6 +8,7 @@ Adversarial Learning and a Multi-scenario Multi-Modality Benchmark to Fuse Infra
 IEEE/CVF Conference on Computer Vision and Pattern Recognition **(CVPR)**, 2022. **(Oral)**
 
 - [*[ArXiv]*](https://arxiv.org/abs/2203.16220v1)
+- [*[CVPR]*](https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Target-Aware_Dual_Adversarial_Learning_and_a_Multi-Scenario_Multi-Modality_Benchmark_To_CVPR_2022_paper.pdf)
 
 ---
 
@@ -47,6 +48,11 @@ The preview of our dataset is as follows.
     - **4200** (for fusion, detection and fused-based detection)
     - **300** (independent scene for fusion)
 
+
+- **Format of images**: 
+   - [Infrared] 24-bit grayscale bitmap
+   - [Visible]  24-bit color bitmap
+
 - **Image size**: **1024 x 768** pixels (mostly)
 
 - **Registration**: **All image pairs are registered.** The visible images are calibrated by using the internal
@@ -64,29 +70,29 @@ The preview of our dataset is as follows.
 ### File structure
 
 ```
-M3FD
-├── Challenge
-|   ├── Beach
-|   |   ├── Annotation
-|   |   |   ├── 01863.xml
-|   |   |   └── ...
-|   |   ├── Ir
-|   |   |   ├── 01863.png
-|   |   |   └── ...
-|   |   ├── Vis
-|   |   |   ├── 01863.png
-|   |   |   └── ...
-|   ├── Crossroads
-|   └── ...
-├── Daytime
-|   ├── Alley
-|   └── ...
-├── Night
-|   ├── Basement
-|   └── ...
-└── Overcast
-    ├── Atrium
-    └── ...
+  M3FD
+  ├── Challenge
+  |   ├── Beach
+  |   |   ├──Annotation
+  |   |   |  ├── 01863.xml
+  |   |   |  └── ...
+  |   |   ├──Ir
+  |   |   |  ├── 01863.png
+  |   |   |  └── ...
+  |   |   ├──Vis
+  |   |   |  ├── 01863.png
+  |   |   |  └── ...
+  |   ├── Crossroads
+  |   └── ...
+  ├── Daytime
+  |   ├── Alley
+  |   └── ...
+  ├── Night
+  |   ├── Basement
+  |   └── ...
+  └── Overcast
+      ├── Atrium
+      └── ...
 ```
 
 If you have any question or suggestion about the dataset, please email to [Guanyao Wu](mailto:rollingplainko@gmail.com)
@@ -232,11 +238,11 @@ Due to job changes, the previous link `zbhuang@mail.dlut.edu.cn` is no longer av
 If this work has been helpful to you, please feel free to cite our paper!
 
 ```
-@inproceedings{TarDAL,
-title={Target-aware Dual Adversarial Learning and a Multi-scenario Multi-Modality Benchmark to Fuse Infrared and Visible for Object
-Detection},
-author={Jinyuan Liu, Xin Fan*, Zhangbo Huang, Guanyao Wu, Risheng Liu , Wei Zhong, Zhongxuan Luo},
-booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-year={2022}
+@inproceedings{liu2022target,
+  title={Target-aware Dual Adversarial Learning and a Multi-scenario Multi-Modality Benchmark to Fuse Infrared and Visible for Object Detection},
+  author={Liu, Jinyuan and Fan, Xin and Huang, Zhanbo and Wu, Guanyao and Liu, Risheng and Zhong, Wei and Luo, Zhongxuan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={5802--5811},
+  year={2022}
 }
 ```

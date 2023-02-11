@@ -39,7 +39,7 @@ iqa      :
 #   if you want to use some custom datasets, please refer to the documentation to write yourself or open an issue.
 dataset  :
   name  : roadscene # dataset folder to be trained with (fuse: TNO, RoadScene; fuse & detect: M3FD, MultiSpectral, etc.)
-  root  : data/sample/s1 # dataset root path
+  root  : assets/sample/s1 # dataset root path
   # only available for fuse & detect
   detect:
     hsv        : [ 0.015,0.7,0.4 ] # image HSV augmentation (fraction) [developing]

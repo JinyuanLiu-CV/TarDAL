@@ -1,7 +1,17 @@
-kornia~=0.6.3
-numpy~=1.20
-opencv_contrib_python~=4.5.5.62
-torch~=1.9
-torchvision~=0.10
-tqdm~=4.62.3
-wandb~=0.12.11
+# TarDAL requirements
+# Usage: pip install -r requirements.txt
+
+# Base ----------------------------------------
+numpy>=1.20
+torch>=1.9
+torchvision>=0.10
+kornia>=0.6.8
+opencv-python>=4.5.5.64
+PyYAML>=6.0
+pandas>=1.5.1
+matplotlib>=3.6.3
+
+# Logging -------------------------------------
+wandb>=0.12.11
+tqdm>=4.63.0
+tabulate>=0.8.9

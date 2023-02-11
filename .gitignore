@@ -1,14 +1,8 @@
-# PyCharm File (contain sensitive: server information)
+# project config file (contain sensitive: server information)
 .idea/*
 
-# Fuse Results (contain images that can be reproduced by given model parameters)
+# fuse results (contain images that can be reproduced by given model parameters)
 runs/*
-
-# Some of Utils (contain sensitive: wandb id etc.)
-utils/*
-!utils/fusion_data.py
-!utils/environment_probe.py
-!utils/image_pair.py
 
 # macOS finder file (contain sensitive: local username)
 **/.DS_Store
@@ -18,7 +12,13 @@ utils/*
 
 # experimental data
 data/*
-!data/sample/s1/*
+!data/README.md
+
+# weights (update by release)
+weights/*
+
+# test files
+**/test/*
 
 # wandb
 wandb/*

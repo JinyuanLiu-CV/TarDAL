@@ -79,21 +79,21 @@ class Fuse:
         self.wk, self.wp = 2, 6
 
     def load_ckpt(self, ckpt: dict):
-        ckpt = ckpt if 'fuse' not in ckpt else ckpt['fuse']
+        f_ckpt = ckpt if 'fuse' not in ckpt else ckpt['fuse']
 
         # check eval mode
         if self.config.inference.use_eval is None:
-            if 'use_eval' in ckpt:
-                logging.warning(f'overwriting inference.use_eval {self.config.inference.use_eval} with {ckpt["use_eval"]}')
-                self.config.inference.use_eval = ckpt['use_eval']
+            if 'use_eval' in f_ckpt:
+                logging.warning(f'overwriting inference.use_eval {self.config.inference.use_eval} with {f_ckpt["use_eval"]}')
+                self.config.inference.use_eval = f_ckpt['use_eval']
             else:
                 logging.warning(f'no use_eval settings found, using default (true)')
                 self.config.inference.use_eval = True
-        if 'use_eval' in ckpt:
-            ckpt.pop('use_eval')
+        if 'use_eval' in f_ckpt:
+            f_ckpt.pop('use_eval')
 
         # load state dict
-        self.generator.load_state_dict(ckpt)
+        self.generator.load_state_dict(f_ckpt)
         if self.mode == 'train' and 'disc' in ckpt:
             self.dis_t.load_state_dict(ckpt['disc']['t'])
             self.dis_d.load_state_dict(ckpt['disc']['d'])

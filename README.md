@@ -67,33 +67,6 @@ The preview of our dataset is as follows.
 - [Google Drive](https://drive.google.com/drive/folders/1H-oO7bgRuVFYDcMGvxstT1nmy0WF_Y_6?usp=sharing)
 - [Baidu Yun](https://pan.baidu.com/s/1GoJrrl_mn2HNQVDSUdPCrw?pwd=M3FD)
 
-### File structure
-
-```
-  M3FD
-  ├── Challenge
-  |   ├── Beach
-  |   |   ├──Annotation
-  |   |   |  ├── 01863.xml
-  |   |   |  └── ...
-  |   |   ├──Ir
-  |   |   |  ├── 01863.png
-  |   |   |  └── ...
-  |   |   ├──Vis
-  |   |   |  ├── 01863.png
-  |   |   |  └── ...
-  |   ├── Crossroads
-  |   └── ...
-  ├── Daytime
-  |   ├── Alley
-  |   └── ...
-  ├── Night
-  |   ├── Basement
-  |   └── ...
-  └── Overcast
-      ├── Atrium
-      └── ...
-```
 
 If you have any question or suggestion about the dataset, please email to [Guanyao Wu](mailto:rollingplainko@gmail.com)
 or [Jinyuan Liu](mailto:atlantis918@hotmail.com).
